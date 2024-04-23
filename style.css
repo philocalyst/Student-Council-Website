@@ -173,7 +173,7 @@ picture img {
 h2 {
     font-size: var(--h2);
     margin: 2rem 0;
-    font-family:'Sabor';
+    font-family:'Calistoga';
 }
 
 section div p, footer p {
@@ -268,7 +268,7 @@ section div button, section[aria-label="Responsibilities"] div {
 
 section div button {
     margin: min(1.8rem + 0.25vw, 2rem) 0;
-    font-family: 'Sabor';
+    font-family: 'Calistoga';
     text-align: center;
     color: #f8eeee;
     background: rgba(248, 0, 174, 0.3);
@@ -344,7 +344,7 @@ section[aria-label="Responsibilities"] ul::before {
 
 
 figcaption {
-    font-family: 'Sabor';
+    font-family: 'Calistoga';
     font-size: 2rem;
     text-align: center;
 }
