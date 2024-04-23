@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,opsz,wght@0,8..30,100..900;1,8..30,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <img src="https://www.fordfoundation.org/wp-content/uploads/2023/05/Ford-Foundation.svg">
+        <nav>
+        <ul>
+            <a href="#">Projects</a>
+            <a href="#">Minutes</a>
+            <a href="#">Leadership</a>
+            <a href="#">Feedback</a>
+        </ul>
+        
+    </nav>
+    </header>
+    <main>
+        <section aria-label="Who we are">
+            <div>
+                <h2> 
+                    Connecting Students to Solutions Schoolwide
+                </h2>
+                <p>
+                    The HVJ Student Council — more affectionately known as the Warrior Council — is a club and organization serving the student body and community of Jenkins High School. 
+                    With monthly meetings, we're comprised of students across all four grades with diverse and unique perspectives. 
+                    Our student leaders help plan school-wide events and provide students with leadership skills found nowhere else. 
+                    Our Council is constantly committed to building a strong sense of community among our student body, so that everyone feels welcomed and included.
+                </p>
+                <button>More about us</button>
+                <hr>
+            </div>
+            <picture>
+                <source srcset="https://imagescdn.homes.com/i2/x4NtWiQSZ99n7ZB3TDxEju6hK2gMImSoJpiYSdX-lRw/116/savannah-arts-academy-savannah-ga-3.jpg?p=1" media="(max-width: 1350px)" />
+                <img src="https://imagescdn.homes.com/i2/OGUzdve15_UG-U2avoKN1CGMLIfqt7oE2epYk56WpHM/111/savannah-arts-academy-savannah-ga-7.jpg?p=1">
+            </picture>
+        </section>
+        <section aria-label="Responsibilities">
+            <h2>Our Responsibilities:</h2>
+            <ul>
+                <div>
+                    <figure>
+                        <img src="Air_mail-removebg-preview.png">
+                        <figcaption>Planning events</figcaption>
+                    </figure>
+                    <p>
+                        We create unforgettable experiences that enrich student life and foster community, from spirited pep rallies to elegant dances. Our process starts with creativity and collaboration, seeking input to ensure events reflect our diverse community. We meticulously plan every detail, from securing venues to coordinating volunteers, aiming to entertain, inspire, and unite. We're constantly improving, learning from each experience to exceed expectations. Join us in shaping our school's social calendar, making every event a celebration of our unity and spirit.
+                    </p>
+                </div>
+                <div id="middle">
+                    <figure>
+                        <img src="Air_mail-removebg-preview.png">
+                        <figcaption>Sharing information</figcaption>
+                    </figure>
+                    <p>
+                        We are the source for news, updates, and important information that keeps our school community informed and engaged. Through our newsletter and newspaper, we deliver stories that reflect the diverse interests and achievements of our students. We aim to be a platform for student voices, sharing your ideas, opinions, and accomplishments with the entire school. Our team works tirelessly to gather, write, and publish content that informs, inspires, and entertains. Join us in shaping the narrative of our school community, ensuring that every student has a voice and every story is told.
+                    </p>
+                </div>
+                <div>
+                    <figure>
+                        <img src="Air_mail-removebg-preview.png">
+                        <figcaption>Bettering school</figcaption>
+                    </figure>
+                    <p>
+                        We are dedicated to enhancing every aspect of our school community, from academics to extracurriculars. Our goal is to create a positive and inclusive environment where every student can thrive. We collaborate with students, teachers, and administrators to identify areas for improvement and develop innovative solutions. Whether it's upgrading facilities, implementing new programs, or fostering a culture of inclusivity, we are committed to making our school the best it can be. Join us in shaping the future of our school, where every voice is heard, and every idea matters. Together, let's create a school we can all be proud of.
+
+                    </p>
+                </div>
+            </ul>
+        </section>
+        <footer>
+            <h2> 
+                Contact Us:
+            </h2>
+            <ul>
+                <a> 
+                    Instagram
+                </a>
+                <a> 
+                    Email
+                </a>
+            </ul>
+        </footer>
+    </main>
+</body>
+<script>
+function cutTextFromPeriod(paragraph) {
+    let text = paragraph.textContent;
+    let index = text.indexOf('.');
+    if (index !== -1) {
+        let newText = text.slice(0, index + 1);
+        paragraph.textContent = newText;
+    }
+}
+
+function checkWidthAndCutText() {
+    if (window.innerWidth < 1350) {
+        let paragraphs = document.querySelectorAll('section[aria-label="Responsibilities"] div p');
+        paragraphs.forEach(paragraph => {
+            cutTextFromPeriod(paragraph);
+        });
+    }
+}
+
+checkWidthAndCutText();
+
+window.addEventListener('resize', checkWidthAndCutText);
+</script>
+<script>
+const img = document.querySelector('section[aria-label="Who we are"] picture'); 
+const div = document.querySelector('section[aria-label="Who we are"] div');
+
+function checkWidth() {
+  const screenWidth = window.innerWidth;
+  if (screenWidth < 750) {
+    img.remove();
+    div.classList.add('mobile');
+  }
+}
+checkWidth();
+window.addEventListener('resize', checkWidth);
+</script>
+</script>
+<script>
+const header = document.querySelector('header');
+
+function checkWidth() {
+  const screenWidth = window.innerWidth;
+  const ul = document.querySelector('header ul');
+
+  if (screenWidth < 750) {
+    var toggle = document.createElement('input');
+  toggle.setAttribute('id', 'toggle');
+  toggle.setAttribute('type', 'checkbox');
+  header.appendChild(toggle);
+    header.appendChild(createHamburgerMenu());
+  } else {
+    const toggle = document.getElementById('toggle');
+    if (toggle) {
+      toggle.remove();
+    }
+  }
+}
+
+function createHamburgerMenu() {
+  var label = document.createElement('label');
+  label.setAttribute('for', 'toggle');
+  label.classList.add('hamburger');
+
+  for (var i = 1; i <= 3; i++) {
+    var bar = document.createElement('div');
+    bar.classList.add('bar' + i);
+    label.appendChild(bar);
+  }
+  
+  toggle.addEventListener('change', function() {
+    const nav = document.querySelector('nav');
+    if (this.checked) {
+        nav.style.top = '0';
+      nav.style.transform = 'scale(1)';
+    } else {
+      nav.style.top = '-100%';
+      nav.style.transform = 'scale(0)';
+    }
+  });
+  return label;
+}
+
+checkWidth();
+</script>
+</html>
